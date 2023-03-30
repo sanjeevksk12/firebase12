@@ -1,12 +1,14 @@
 package com.gw.hrconnectapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 
 import com.gw.hrconnect.service.api.SkillService;
+
 
 @RestController
 public class CountryMasterRestController {
@@ -15,6 +17,7 @@ public class CountryMasterRestController {
 	@Autowired
 	private SkillService countryService;
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/welcome")
 	  public String welcome() {
 		countryService.findByCountryId();
